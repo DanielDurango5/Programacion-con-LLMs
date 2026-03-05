@@ -1,0 +1,16 @@
+##Pregunta
+
+Recibes un DataFrame con una columna de valores temporales.
+
+Debes implementar la función:
+    crear_lag_features(df, columna, n_lags)
+
+La función debe:
+    1. Crear n nuevas columnas con los valores desplazados hacia atrás (lag).
+    2. Cada nueva columna debe llamarse:
+        columna_lag_1
+        columna_lag_2
+        ...
+    3. Eliminar filas con NaN generados por el desplazamiento.
+    4. Devolver el DataFrame resultante.
+    

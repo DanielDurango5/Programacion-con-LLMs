@@ -1,0 +1,14 @@
+##Pregunta
+
+Recibes un DataFrame de pandas con columnas numéricas que contienen posibles valores atípicos.
+
+Debes implementar la función:
+eliminar_outliers_iqr(df)
+
+La función debe:
+    1. Calcular el IQR (Interquartile Range) para cada columna.
+    2. Eliminar las filas que tengan valores fuera del rango:
+        [Q1−1.5∗IQR,Q3+1.5∗IQR]
+
+    3. Devolver un DataFrame limpio sin outliers.
+

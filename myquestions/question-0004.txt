@@ -1,0 +1,11 @@
+##Pregunta
+
+Recibes un DataFrame con variables numéricas y una variable objetivo.
+
+Debes implementar la función:
+    seleccionar_por_correlacion(df, target_col, k)
+
+La función debe:
+    1. Calcular la correlación absoluta entre cada feature y la variable objetivo.
+    2. Seleccionar las k variables más correlacionadas.
+    3. Devolver un DataFrame con esas columnas seleccionadas.

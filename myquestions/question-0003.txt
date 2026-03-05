@@ -1,0 +1,12 @@
+##Pregunta
+
+Recibes un DataFrame con variables numéricas.
+
+Debes implementar la función:
+    transformar_cuantiles(df)
+
+La función debe:
+    1. Aplicar QuantileTransformer de sklearn.
+    2. Transformar los datos para que sigan una distribución uniforme.
+    3. Devolver un numpy array con los datos transformados.
+
