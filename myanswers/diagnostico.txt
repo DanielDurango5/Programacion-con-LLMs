@@ -1,0 +1,89 @@
+DIAGNOSTICO
+  
+==============================
+answer-0133.py
+==============
+
+La solución implementada para seleccionar_gmm_por_bic replica la lógica definida en el generador de casos de uso:
+
+* Selección automática de columnas numéricas.
+* Imputación mediante SimpleImputer(strategy="median").
+* Escalado usando StandardScaler.
+* Evaluación de múltiples GaussianMixture.
+* Cálculo del BIC para cada valor de k.
+* Selección del modelo con menor BIC.
+* Generación de labels.
+* Construcción de un Pipeline final.
+
+La implementación utiliza también:
+
+* el mismo covariance_type
+* el mismo random_state
+* n_init=2
+
+Posibles diferencias:
+
+GaussianMixture es un algoritmo probabilístico basado en optimización iterativa (EM). Aunque se utilice random_state, pueden existir pequeñas variaciones numéricas debido a:
+
+* precisión floating point
+* convergencia interna del algoritmo
+* inicialización de componentes
+
+Estas diferencias pueden reflejarse en:
+
+* ligeras variaciones del BIC
+* cambios en labels en algunos casos límite
+
+Sin embargo, la lógica implementada coincide completamente con el generador de casos de uso.
+
+==============================
+answer-0139.py
+==============
+
+La solución implementada para weighted_regression_score sigue exactamente la lógica definida en el generador:
+
+* entrenamiento de un modelo Ridge
+* predicción sobre el mismo conjunto X
+* cálculo del Weighted Mean Squared Error:
+
+WMSE = sum(weights_i * (y_i - y_pred_i)^2) / sum(weights_i)
+
+* retorno del resultado como float
+
+No deberían existir discrepancias relevantes respecto al output esperado del generador.
+
+==============================
+answer-0165.py
+==============
+
+La solución implementada para reducir_dimensionalidad_tsne replica correctamente la lógica del generador:
+
+* selección de columnas
+* escalado con StandardScaler
+* reducción de dimensionalidad usando TSNE
+* uso de:
+  perplexity = min(5, n_samples - 1)
+
+Posibles diferencias:
+
+TSNE es un algoritmo estocástico y no completamente determinista. Incluso utilizando el mismo random_state, pueden aparecer pequeñas diferencias numéricas debido a:
+
+* optimización iterativa interna
+* precisión floating point
+* comportamiento interno de sklearn.manifold.TSNE
+
+Estas diferencias pueden modificar ligeramente las coordenadas finales del espacio reducido, sin representar un error conceptual en la solución.
+
+==============================
+answer-0246.py
+==============
+
+La solución implementada para calcular_metricas_campana sigue exactamente los pasos definidos en el generador:
+
+* cálculo de CTR = clicks / impresiones
+* cálculo de CPC = costo / clicks
+* agrupación por campaña
+* cálculo del promedio de ctr y cpc
+* renombrado de columnas
+
+No deberían existir discrepancias respecto al resultado esperado.
